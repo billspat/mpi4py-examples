@@ -2,11 +2,16 @@ This is a fork for https://github.com/jbornschein/mpi4py-examples edited to run 
 as of May 2018
 
 
-```
-conda install mpi4py
-```
+##  === Getting Started ===
 
+You may copy these examples into your home directory with 
 
+```
+cd ~
+git clone https://github.com/billspat/mpi4py-examples.git
+cd mpi4py-examples
+
+```
 
 ##  === Dependencies ===
 
@@ -17,7 +22,13 @@ can be found at:
 
    http://mpi4py.scipy.org/
 
+On the HPCC we often recommend you install the Anaconda Python distribution ( see https://wiki.hpcc.msu.edu/x/GwGd ). 
 
+Once Anaconda is installed you may install mpi4py as follows
+
+```
+conda install mpi4py
+```
 
 ## === How to run on a single (multi-core) host ===
 
