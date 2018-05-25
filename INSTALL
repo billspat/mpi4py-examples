@@ -1,0 +1,56 @@
+# Installing Anaconda Python
+
+
+# see wiki about Anaconda background
+
+# For those who understand Python, consider using "miniconda" which is  smaller to download and comes with minimal packages
+
+
+### First inspect current environment pre-install
+# what is in your profile startup?
+cat ~/.bashrc
+# what is your current default python program?
+which python
+
+
+###  get anaconda python installer
+# https://www.anaconda.com/download/
+# Right click on the small link for Python 3.6 Linux 64bit installer
+# lots of shell scripting goodies here
+
+
+# let's use a temporary directory to download this large installer
+mkdir ~/tmp
+cd ~/tmp
+
+# here is current URL for download, replace with the one you copied above
+
+URL=https://repo.anaconda.com/archive/Anaconda3-5.1.0-Linux-x86_64.sh
+
+# use the curl program to download this file from this URL
+
+curl -O $URL
+
+### RUN INSTALLER
+# can we get just the name of the program from the full URL above?
+# what does basename $URL do?
+# what are backticks in BASH?
+
+
+INSTALLER=`basename $URL`
+
+# run the script installer
+bash $INSTALLER
+
+# the installer changes your .bashrc
+
+cat ~/.bashrc
+
+# source this file to get those changes
+
+source ~/.bashrc
+
+# which python now?
+which python
+
+
