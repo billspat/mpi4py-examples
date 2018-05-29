@@ -1,4 +1,4 @@
-This is a fork for https://github.com/jbornschein/mpi4py-examples edited to run on MSU's HPCC 2016 Cluster under Moab/Torque 
+ This is a fork for https://github.com/jbornschein/mpi4py-examples edited to run on MSU's HPCC 2016 Cluster under Moab/Torque 
 as of May 2018
 
 
@@ -48,24 +48,9 @@ Or
 
 For MSU HPCC, to run on multiple hosts we strongly recommend using multiple hosts only when running a job.  Please see the section below, "
 
-** Original instructions** 
-
-If you want to run the program distributed over multiple hosts, 
-you have to create a <hostfile> which looks like:
-
--- hostfile --
-host1   slots=4
-host2   slots=4
-host3   slots=4
---------------
-
-Where "slots=" specifies the number of parallel processes that should be
-started on that host.
-
-Run it with
-
-  mpirun --hostfile <hostfile> ./some-program
-
+Note the Original instructions discussed using a 
+'hostfile' which is unecessary when submitting
+a job here.
 
 === Run on the MSU HPCC cluster with the Moab/Torque Job scheduling system ===
 
@@ -76,7 +61,8 @@ a) Run interactively:
 Request an interactive session and allocate a number of processors/nodes for 
 your session:
 
- $ qsub -I X -l nodes=4:ppn=4
+ $ qsub -I -X -l nodes=4:ppn=4,walltime=01:00:00
+
 
 Where "-I" means you want to work interactively, "-X" requests grapical
 (X-Window) I/O -- (you can run arbitrary programs that open windows).  The
